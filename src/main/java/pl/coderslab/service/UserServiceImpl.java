@@ -9,6 +9,7 @@ import pl.coderslab.repository.UserRepository;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -27,6 +28,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUserName(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     @Override
