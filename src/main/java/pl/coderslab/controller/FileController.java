@@ -1,11 +1,11 @@
 package pl.coderslab.controller;
 
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import pl.coderslab.model.DbFile;
 import pl.coderslab.service.DBFileStorageService;
@@ -39,4 +39,13 @@ public class FileController {
         return new ResponseEntity<>("File is uploaded succesfully", HttpStatus.OK);
     }
 
+    @GetMapping("/download/{fileId}")
+    public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable Integer fileId) {
+        DbFile dbFile = dbFileStorageService.getFile(fileId).get();
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(dbFile.getFileType()))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment:filename=\"" +
+                        dbFile.getFileName() + "\"")
+                .body(new ByteArrayResource(dbFile.getData()));
+    }
 }
