@@ -15,22 +15,22 @@ public class DBFileStorageService {
 
     private final DBFileRepository dbFileRepository;
 
+
     public DBFileStorageService(DBFileRepository dbFileRepository) {
         this.dbFileRepository = dbFileRepository;
     }
 
-    public DbFile saveFile(MultipartFile multipartFile) {
+    public void saveFile(MultipartFile multipartFile) {
         String docName = multipartFile.getOriginalFilename();
         try {
             DbFile dbFile = new DbFile();
             dbFile.setFileName(docName);
             dbFile.setFileType(multipartFile.getContentType());
             dbFile.setData(multipartFile.getBytes());
-            return dbFileRepository.save(dbFile);
+            dbFileRepository.save(dbFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
     }
 
     public Optional<DbFile> getFile(Integer fileId) {
@@ -39,5 +39,18 @@ public class DBFileStorageService {
 
     public List<DbFile> getFiles() {
         return dbFileRepository.findAll();
+    }
+
+    public void deleteFile(Integer fileId) {
+        Optional<DbFile> dbFile = dbFileRepository.findById(fileId);
+        dbFileRepository.delete(dbFile.get());
+    }
+
+    public void updateFile(MultipartFile multipartFile, DbFile dbFile) throws IOException {
+
+        dbFile.setFileName(multipartFile.getOriginalFilename());
+        dbFile.setFileType(multipartFile.getContentType());
+        dbFile.setData(multipartFile.getBytes());
+        dbFileRepository.save(dbFile);
     }
 }
