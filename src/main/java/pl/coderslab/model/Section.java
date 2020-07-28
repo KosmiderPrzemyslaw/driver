@@ -1,9 +1,7 @@
 package pl.coderslab.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Section {
@@ -13,4 +11,6 @@ public class Section {
 
     private String name;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "section", cascade = CascadeType.ALL)
+    private List<Advice> adviceList;
 }
