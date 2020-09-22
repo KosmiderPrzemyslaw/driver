@@ -9,8 +9,6 @@ import pl.coderslab.model.User;
 import pl.coderslab.repository.UserRepository;
 import pl.coderslab.service.UserService;
 
-import java.util.List;
-
 @Controller
 public class HomeController {
 
@@ -44,11 +42,11 @@ public class HomeController {
         return "-created-";
     }
 
-    @GetMapping("/findAllUsers")
-    @ResponseBody
-    public List<User> findAllUsers(){
-
-        return userRepository.findAll();
-    }
+//    @GetMapping("/findAllUsers")
+//    @ResponseBody
+//    public List<User> findAllUsers(){
+//
+//        return userRepository.findAll();
+//    }
 
 }

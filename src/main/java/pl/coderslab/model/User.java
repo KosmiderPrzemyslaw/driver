@@ -1,10 +1,18 @@
 package pl.coderslab.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Set;
-
+@Getter
+@Setter
 @Entity(name = "users")
-@Table(name = "admins")
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,15 +21,17 @@ public class User {
     private String username;
     private String password;
     private int enabled;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "location_id")
+    private Location location;
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }

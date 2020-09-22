@@ -1,0 +1,65 @@
+[33mcommit a9c3fc80aa0da1cb49a71e320d35e845e5471e02[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 28 06:56:47 2020 +0200
+
+    new sections added
+
+[33mcommit c8e319643e7523ff1a557e7cfae6a9b81c738756[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 28 06:32:56 2020 +0200
+
+    create sections
+
+[33mcommit 5adf04a68c46dd98648bcd3af51b98ae53ca0057[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Sat Jul 25 23:31:04 2020 +0200
+
+    updating files in database
+
+[33mcommit c343e8c223fb5388a83ac98d43e4ac2eb4af242a[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Sat Jul 25 15:22:19 2020 +0200
+
+    downloading file from database
+
+[33mcommit 706d96a7158953c5d0063966f1ba3d925a1f35c5[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Sat Jul 25 14:05:19 2020 +0200
+
+    uploading files into db using rest
+
+[33mcommit 8891aa1defab1ffaa6483d345581fb75b56ae6e7[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Wed Jul 22 00:33:14 2020 +0200
+
+    add DBFile entity
+
+[33mcommit 8e7295ba93837009a5bd0f656d456ff3455aca58[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 21 23:59:25 2020 +0200
+
+    relations in db
+
+[33mcommit 4bd954553cea1d62ffe310ba8874c77cf29569a5[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 21 23:43:04 2020 +0200
+
+    add entities
+
+[33mcommit fbd93bad7ec9104cc26a4eee81981dd0c7ad032a[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 21 23:17:37 2020 +0200
+
+    add Docket
+
+[33mcommit 2ae1e4916378fbd724e499b87799fbf097b6a938[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 21 22:06:48 2020 +0200
+
+    set database
+
+[33mcommit 78eb32db1052e1dccd396c5c0be009c53e76952e[m
+Author: Przemysław Kośmider <kosmiderprzemyslaw91@gmail.com>
+Date:   Tue Jul 21 21:28:02 2020 +0200
+
+    first driver commit

@@ -1,0 +1,83 @@
+[1mdiff --git a/.idea/dataSources.xml b/.idea/dataSources.xml[m
+[1mindex f33d762..060ce77 100644[m
+[1m--- a/.idea/dataSources.xml[m
+[1m+++ b/.idea/dataSources.xml[m
+[36m@@ -1,11 +1,11 @@[m
+ <?xml version="1.0" encoding="UTF-8"?>[m
+ <project version="4">[m
+   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">[m
+[31m-    <data-source source="LOCAL" name="springBootMaven@localhost" uuid="7e80b3f7-a494-4875-a8f4-178fe145d68c">[m
+[32m+[m[32m    <data-source source="LOCAL" name="portfolioLab@localhost" uuid="7e80b3f7-a494-4875-a8f4-178fe145d68c">[m
+       <driver-ref>mysql.8</driver-ref>[m
+       <synchronize>true</synchronize>[m
+       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>[m
+[31m-      <jdbc-url>jdbc:mysql://localhost:3306/springBootMaven?serverTimezone=UTC&amp;characterEncoding=utf8</jdbc-url>[m
+[32m+[m[32m      <jdbc-url>jdbc:mysql://localhost:3306/portfolioLab?serverTimezone=UTC&amp;characterEncoding=utf8</jdbc-url>[m
+       <driver-properties>[m
+         <property name="autoReconnect" value="true" />[m
+         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />[m
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mindex c96eac2..b604f8b 100644[m
+[1m--- a/pom.xml[m
+[1m+++ b/pom.xml[m
+[36m@@ -11,12 +11,12 @@[m
+     <name>portfoliolab-springboot</name>[m
+     <description>PortfolioLab Example Spring Boot</description>[m
+ [m
+[31m-<!--    <parent>-->[m
+[31m-<!--        <groupId>org.springframework.boot</groupId>-->[m
+[31m-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->[m
+[31m-<!--        <version>1.5.16.BUILD-SNAPSHOT</version>-->[m
+[31m-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->[m
+[31m-<!--    </parent>-->[m
+[32m+[m[32m    <!--    <parent>-->[m
+[32m+[m[32m    <!--        <groupId>org.springframework.boot</groupId>-->[m
+[32m+[m[32m    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->[m
+[32m+[m[32m    <!--        <version>1.5.16.BUILD-SNAPSHOT</version>-->[m
+[32m+[m[32m    <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->[m
+[32m+[m[32m    <!--    </parent>-->[m
+ [m
+     <parent>[m
+         <groupId>org.springframework.boot</groupId>[m
+[36m@@ -33,7 +33,23 @@[m
+ [m
+     <dependencies>[m
+ [m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.modelmapper</groupId>[m
+[32m+[m[32m            <artifactId>modelmapper</artifactId>[m
+[32m+[m[32m            <version>2.3.8</version>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.projectlombok</groupId>[m
+[32m+[m[32m            <artifactId>lombok</artifactId>[m
+[32m+[m[32m            <version>1.18.12</version>[m
+[32m+[m[32m            <scope>provided</scope>[m
+[32m+[m[32m        </dependency>[m
+ [m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.mapstruct</groupId>[m
+[32m+[m[32m            <artifactId>mapstruct</artifactId>[m
+[32m+[m[32m            <version>1.3.1.Final</version>[m
+[32m+[m[32m        </dependency>[m
+         <dependency>[m
+             <groupId>org.springframework.boot</groupId>[m
+             <artifactId>spring-boot-actuator-docs</artifactId>[m
+[36m@@ -75,17 +91,12 @@[m
+             <scope>runtime</scope>[m
+         </dependency>[m
+ [m
+[31m-        <dependency>[m
+[31m-            <groupId>org.springframework.boot</groupId>[m
+[31m-            <artifactId>spring-boot-starter-test</artifactId>[m
+[31m-            <scope>test</scope>[m
+[31m-        </dependency>[m
+ [m
+[31m-        <dependency>[m
+[31m-            <groupId>org.projectlombok</groupId>[m
+[31m-            <artifactId>lombok</artifactId>[m
+[31m-            <optional>true</optional>[m
+[31m-        </dependency>[m
+[32m+[m[32m<!--        <dependency>-->[m
+[32m+[m[32m<!--            <groupId>org.projectlombok</groupId>-->[m
+[32m+[m[32m<!--            <artifactId>lombok</artifactId>
