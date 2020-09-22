@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.text.DecimalFormat;
 
 @Entity
 @Getter
@@ -23,5 +24,6 @@ public class Location {
     private double lng;
     private String place;
     private String description;
-
+    private String name;
+    private DecimalFormat price;
 }
